@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>View Employee</title>
+        <title>View Report</title>
         
         <!-- Bootstrap 5 CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -43,7 +43,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Employee Manager</a>
+                <a class="navbar-brand" href="#">Bug Reports</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,37 +53,49 @@
                             <a class="nav-link active" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin" class="nav-link"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/logout">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %>
+          </div>
         <div class="container mt-4">
-            <h2 class="mb-4">Employees List</h2>
+            <h2 class="mb-4">Program List</h2>
             <table class="table table-striped">
                 <tr class="table-dark">
-                    <th>Employee Id</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Comapny Email</th>
-                    <th>User Level</th>
-                    <th>Action</th>
+                    <th>Report Id</th>
+                    <th>Program Name</th>
+                    <th>Report Type</th>
+                    <th>Reported By</th>
+                    <th>Report Date</th>
+                    <th>Attachments</th>
+                    <th>Get XML</th>
+                    <% if(currentUser.user_level != 1) { %> <th>Action</th> <% }%>
                 </tr>
-                <% users.forEach((user) => { %>
+                <% reports.forEach((report) => { %>
                     <tr class="table-light">
-                        <td><%= user.user_id %></td>
-                        <td><%= user.first_name %></td>
-                        <td><%= user.middle_name %></td>
-                        <td><%= user.last_name %></td>
-                        <td><%= user.email %></td>
-                        <td><%= user.user_level %></td>
-                        <td><a href="/editEmployee/<%= user.user_id %>" class="icon-pencil"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> | <a href="/deleteEmployee/<%= currentUser.user_id %>/<%= user.user_id %>?_method=DELETE" class="icon-trash"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><%= report.report_id %></td>
+                        <td><%= report.program_name %></td>
+                        <td><%= report.report_type %></td>
+                        <td><%= report.reported_by_first_name %> <%= report.reported_by_last_name %></td>
+                        <td><%= report.date.toISOString().slice(0, 10) %></td>
+                        <td><a href="/downloadAttachment/<%= report.report_id %>">Download</a></td>
+                        <td><a href="/getXML/<%= report.report_id %>">Export</a></td>
+                        <% if(currentUser.user_level != 1) { %> <td><a href="/editReport/<%= report.report_id %>" class="icon-pencil"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <% if(currentUser.user_level == "3") { %> | <a href="/deleteReport/<%= report.report_id %>?_method=DELETE" class="icon-trash"><i class="fa fa-trash" aria-hidden="true"></i></a> <% } %></td> <% }%>
                     </tr>
                 <% }) %>
             </table>

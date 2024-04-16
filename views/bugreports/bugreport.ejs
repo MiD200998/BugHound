@@ -3,180 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <title>New Bug Report Entry Page</title>
-    
     <style>
-        
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f7f7f7;
-    color: #444;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 2rem auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 32px;
-    color: #5D647B;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 30px;
-    padding: 20px;
-}
-
-.grid > div {
-    background: #f8f8f8;
-    border: none;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #5D647B;
-}
-
-input[type="text"],
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-size: 16px;
-    background: #fefefe;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="date"]:focus,
-select:focus,
-textarea:focus {
-    border-color: #5D647B;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    height: 120px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-}
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-    padding: 10px 30px;
-    border: none;
-    border-radius: 20px;
-    background: #5D647B;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    background: #4e5571;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-input[type="button"] {
-    background: #a2a2a2;
-}
-
-input[type="button"]:hover {
-    background: #929292;
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        width: 95%;
-        margin: 1rem auto;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-actions {
-        flex-direction: column;
-    }
-
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
-
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #444;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 32px;
+            color: #5D647B;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 30px;
+            padding: 20px;
+        }
+        .grid > div {
+            background: #f8f8f8;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #5D647B;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: #fefefe;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="file"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #5D647B;
+            outline: none;
+        }
+        textarea {
+            resize: vertical;
+            height: 120px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            background: #5D647B;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background: #4e5571;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        input[type="button"] {
+            background: #a2a2a2;
+        }
+        input[type="button"]:hover {
+            background: #929292;
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin: 1rem auto;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .form-actions {
+                flex-direction: column;
+            }
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-
 <div class="container">
     <h1>New Bug Report Page</h1>
     <form action="/bugreport" method="post" enctype="multipart/form-data">
         <div class="grid">
             <div>
                 <label for="program">Program:</label>
-                <select id="program" name="program">
-                    <option value="">--Please choose an option--</option>
-                    <option value="Cobol Coder V2">Cobol Coder V2</option>
-                    <option value="Fortran">Fortran</option>
-
+                <select id="program" name="program" required>
+                    <option>--Please choose an option--</option>
+                    <% programs.forEach((program) => { %>
+                        <option value="<%= program.program_id %>"><%= program.program_name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div>
                 <label for="report_type">Report Type:</label>
-                <select id="report_type" name="report_type">
-                    <option value="">--Please choose an option--</option>
+                <select id="report_type" name="report_type" required>
+                    <option>--Please choose an option--</option>
                     <option value="CodingError">Coding Error</option>
                     <option value="DesignIssue">Design Issue</option>
                     <option value="Suggestion">Suggestion</option>
@@ -187,68 +165,76 @@ input[type="button"]:hover {
             </div>
             <div>
                 <label for="severity">Severity:</label>
-                <select id="severity" name="severity">
+                <select id="severity" name="severity" required>
                     <option value="">--Please choose an option--</option>
                     <option value="Fatal">Fatal</option>
                     <option value="Serious">Serious</option>
                     <option value="Minor">Minor</option>
-                 
                 </select>
             </div>
             <div class="full-width">
                 <label for="problem_summary">Problem Summary:</label>
-                <input type="text" id="problem_summary" name="problem_summary">
+                <input type="text" id="problem_summary" name="problem_summary" required>
             </div>
             <div class="full-width">
                 <label for="problem">Problem:</label>
-                <textarea id="problem" name="problem" rows="4"></textarea>
+                <textarea id="problem" name="problem" rows="4" required></textarea>
             </div>
             <div class="full-width">
                 <label for="suggested_fix">Suggested Fix:</label>
-                <textarea id="suggested_fix" name="suggested_fix" rows="4"></textarea>
+                <textarea id="suggested_fix" name="suggested_fix" rows="4" required></textarea>
+            </div>
+            <div class="full-width">
+                <label for="attachment">Additional Documents:</label>
+                <input type="file" id="attachment" name="attachment">
             </div>
             <div>
                 <label for="reported_by">Reported By:</label>
-                <select id="reported_by" name="reported_by">
-                       
-
-
+                <select id="reported_by" name="reported_by" required>
+                    <option>--Please select an option--</option>
+                    <% employees.forEach((employee) => { %>
+                        <option value="<%= employee.user_id %>"><%= employee.first_name %> <%= employee.middle_name %> <%= employee.last_name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date">
+                <label for="date">Report Date:</label>
+                <input type="date" id="report_date" name="report_date" required>
             </div>
             <div class="checkbox-label">
                 <input type="checkbox" id="reproducible" name="reproducible">
                 <label for="reproducible">Reproducible?</label>
             </div>
             <br>
-            <h1>Items Below are for use only for the development team</h1>
-
+            <h1 class="section-title"><span>Items Below are for use only for the development team</span></h1>
             <br>
             <div>
                 <label for="functional_area">Functional Area:</label>
-                <select id="functional_area" name="functional_area">
-                    
+                <select id="functional_area" name="functional_area" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
+                    <option value="">--Select an option--</option>
+                    <option value="UserInterface">UserInterface</option>
+                    <option value="Database">Database</option>
+                    <option value="Security">Security</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Integration">Integration</option>
                 </select>
             </div>
             <div>
                 <label for="assigned_to">Assigned To:</label>
-                <select id="assigned_to" name="assigned_to">
-                    
-
-
-
+                <select id="assigned_to" name="assigned_to" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
+                    <option value="">--Please select an option--</option>
+                    <% employees.forEach((employee) => { %>
+                        <option value="<%= employee.user_id %>"><%= employee.first_name %> <%= employee.middle_name %> <%= employee.last_name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div class="full-width">
                 <label for="comments">Comments:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
+                <textarea id="comments" name="comments" rows="4" <%= currentUser.user_level === '1' ? 'readonly' : '' %>></textarea
             </div>
             <div>
                 <label for="status">Status:</label>
-                <select id="status" name="status">
+                <select id="status" name="status" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
                     <option value="">--Please choose an option--</option>
                     <option value="Open">Open</option>
                     <option value="Closed">Closed</option>
@@ -256,7 +242,7 @@ input[type="button"]:hover {
             </div>
             <div>
                 <label for="priority">Priority:</label>
-                <select id="priority" name="priority">
+                <select id="priority" name="priority" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
                     <option value="">--Please choose an option--</option>
                     <option value="One">1</option>
                     <option value="Two">2</option>
@@ -267,7 +253,7 @@ input[type="button"]:hover {
             </div>
             <div>
                 <label for="resolution">Resolution:</label>
-                <select id="resolution" name="resolution">
+                <select id="resolution" name="resolution" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
                     <option value="">--Please choose an option--</option>
                     <option value="Pending">Pending</option>
                     <option value="Fixed">Fixed</option>
@@ -282,36 +268,36 @@ input[type="button"]:hover {
             </div>
             <div>
                 <label for="resolution_version">Resolution Version:</label>
-                <input type="text" id="resolution_version" name="resolution_version">
+                <input type="text" id="resolution_version" name="resolution_version" <%= currentUser.user_level === '1' ? 'readonly' : '' %>>
             </div>
             <div>
                 <label for="resolved_by">Resolved By:</label>
-                <select id="resolved_by" name="resolved_by">
-                    
-
-
-
+                <select id="resolved_by" name="resolved_by" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
+                    <option value="">--Please select an option--</option>
+                    <% employees.forEach((employee) => { %>
+                        <option value="<%= employee.user_id %>"><%= employee.first_name %> <%= employee.middle_name %> <%= employee.last_name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div>
                 <label for="resolved_date">Resolved Date:</label>
-                <input type="date" id="resolved_date" name="resolved_date">
+                <input type="date" id="resolved_date" name="resolved_date" <%= currentUser.user_level === '1' ? 'readonly' : '' %>>
             </div>
             <div>
                 <label for="tested_by">Tested By:</label>
-                <select id="tested_by" name="tested_by">
-                    
-
-
-                    
+                <select id="tested_by" name="tested_by" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
+                    <option value="">--Please select an option--</option>
+                    <% employees.forEach((employee) => { %>
+                        <option value="<%= employee.user_id %>"><%= employee.first_name %> <%= employee.middle_name %> <%= employee.last_name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div>
-                <label for="test_date">Date:</label>
-                <input type="date" id="test_date" name="test_date">
+                <label for="test_date">Test Date:</label>
+                <input type="date" id="test_date" name="test_date" <%= currentUser.user_level === '1' ? 'readonly' : '' %>>
             </div>
             <div class="checkbox-label">
-                <input type="checkbox" id="treat_as_deferred" name="treat_as_deferred">
+                <input type="checkbox" id="treat_as_deferred" name="treat_as_deferred" <%= currentUser.user_level === '1' ? 'disabled' : '' %>>
                 <label for="treat_as_deferred">Treat as Deferred?</label>
             </div>
         </div>
@@ -322,6 +308,5 @@ input[type="button"]:hover {
         </div>
     </form>
 </div>
-
 </body>
 </html>
